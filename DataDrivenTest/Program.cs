@@ -36,7 +36,7 @@ class Program
         {
             driver.FindElement(By.Id("username")).SendKeys(test.username);
             Console.WriteLine("Provide username: " +test.username);
-            testl.Log(Status.Info, "Provide username");
+            testl.Log(Status.Info, "Provide username: " +test.username);
 
             driver.FindElement(By.Id("password")).SendKeys(test.password);
             Console.WriteLine("Provide Password: "+test.password);
@@ -64,6 +64,7 @@ class Program
 
 
         driver.Quit();
+        extentReports.Flush();
     }
 
     static List<TestData> ReadCsvData(string filePath)
